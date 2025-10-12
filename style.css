@@ -1,0 +1,84 @@
+
+:root{
+  --navy:#071235;
+  --blue:#1e63d3;
+  --silver:#f2f4f8;
+  --accent:#f6b75e;
+  --bg-dark:#061221;
+  --bg-light:#f8fbff;
+  --text-dark:#0b1c2e;
+  --text-light:#e9f2ff;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg-dark);color:var(--text-light);-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* THEME TOGGLE */
+.theme-toggle{position:fixed;right:18px;top:18px;background:rgba(255,255,255,0.06);color:var(--text-light);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+/* HERO */
+.hero-outer{position:relative;padding:60px 0 40px;overflow:hidden}
+.hero-inner{display:flex;align-items:center;gap:24px}
+.logo-wrap{flex:0 0 140px}
+.hero-logo{width:140px;height:140px;object-fit:contain;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.4);background:linear-gradient(135deg,var(--blue),var(--navy))}
+.hero-text .name{font-size:2rem;margin-bottom:6px}
+.hero-text .tagline{color:rgba(255,255,255,0.9);margin-bottom:12px}
+.hero-cta{display:flex;gap:12px}
+.btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.primary{background:var(--accent);color:#041027}
+.ghost{background:transparent;color:var(--silver);border:1px solid rgba(255,255,255,0.06)}
+
+/* Watermark */
+.hero-watermark{position:absolute;right:-60px;top:10%;opacity:0.06;transform:rotate(-12deg);width:480px}
+.hero-watermark img{width:100%;display:block}
+
+/* Sections */
+.section{padding:48px 0}
+.section h2{color:var(--accent);margin-bottom:12px}
+.section p{color:rgba(255,255,255,0.9)}
+
+/* About */
+.about p{max-width:820px}
+
+/* Projects grid */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.project-card{background:rgba(255,255,255,0.03);padding:0;border-radius:10px;overflow:hidden;display:block;border:1px solid rgba(255,255,255,0.03)}
+.project-card img{height:140px;width:100%;object-fit:cover}
+.project-body{padding:12px}
+.placeholder{display:flex;align-items:center;justify-content:center;min-height:140px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+.contact-card{background:rgba(255,255,255,0.03);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Footer */
+.footer{background:linear-gradient(90deg,var(--navy),var(--blue));padding:18px;margin-top:24px;color:var(--silver)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.footer .dev-link{color:var(--silver);font-weight:700;text-decoration:none;position:relative}
+.dev-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--navy));transition:width .35s ease;border-radius:2px}
+.dev-link:hover::after{width:100%}
+.social-links a{color:var(--silver);margin-left:12px}
+
+/* Top button */
+#topBtn{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;border:none;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:999}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.12s}
+.delay-2{transition-delay:.22s}
+
+/* Light theme (switch) */
+body.light{background:var(--bg-light);color:var(--text-dark)}
+body.light .hero-logo{background:linear-gradient(135deg,var(--navy),var(--blue));box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+body.light .footer{background:linear-gradient(90deg,#f0f4fb,#eaf2ff);color:var(--text-dark)}
+body.light .dev-link{color:var(--text-dark)}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-inner{flex-direction:column;align-items:center;text-align:center;padding:0 1rem}
+  .hero-watermark{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{display:none}
+}

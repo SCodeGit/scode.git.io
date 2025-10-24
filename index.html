@@ -6,17 +6,25 @@
   <title>SCode — Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
-</head>
-<body>
 
+  <!-- Optional: favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Theme preference for system detection -->
+  <meta name="color-scheme" content="light dark">
+</head>
+
+<body class="light-theme">
   <!-- Theme toggle -->
-  <div class="theme-toggle" id="themeToggle" title="Toggle light / dark" aria-label="Toggle theme">🌙</div>
+  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
 
   <!-- Header / Hero -->
   <header class="hero-outer">
     <div class="container hero-inner">
       <div class="logo-wrap">
-        <img src="images/WhatsApp Image 2025-10-12 at 10.57.51 PM.jpeg" alt="SCode logo" class="hero-logo">
+        <a href="index.html">
+          <img src="images/WhatsApp Image 2025-10-12 at 10.57.51 PM.jpeg" alt="SCode logo" class="hero-logo">
+        </a>
       </div>
       <div class="hero-text">
         <h1 class="name">SCode</h1>
@@ -36,7 +44,7 @@
   <section class="section about" id="about">
     <div class="container">
       <h2>About</h2>
-      <p>Hi — I’m <strong>SCode</strong>, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups and businesses.</p>
+      <p>Hi — I’m <strong>SCode</strong>, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.</p>
     </div>
   </section>
 
@@ -99,7 +107,7 @@
       <div class="left">
         <strong>SCode</strong><br>
         <small>© 2025 All Rights Reserved — built by 
-          <a class="dev-link" href="https://scodegit.github.io/scode.git.io/" target="_blank" rel="noopener">SCode</a>
+          <a class="dev-link" href="index.html">SCode</a>
         </small>
       </div>
       <div class="right social-links">
@@ -112,6 +120,8 @@
 
   <button id="topBtn" title="Back to top">↑</button>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
+

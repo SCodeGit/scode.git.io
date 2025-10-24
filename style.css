@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', system-ui, sans-serif;
   background: var(--dark-bg);
@@ -26,8 +30,8 @@ body {
   line-height: 1.6;
 }
 
-/* Optional light mode */
-body.light {
+/* Light mode */
+body.light-theme {
   background: #f5f6fa;
   color: #202124;
 }
@@ -56,13 +60,14 @@ body.light {
   cursor: pointer;
   z-index: 1000;
   box-shadow: 0 0 15px var(--neon-green);
+  transition: all 0.3s ease;
 }
 .theme-toggle:hover {
   background: var(--accent-blue);
   color: var(--white);
 }
 
-/* Hero */
+/* Hero Section */
 .hero-outer {
   background: radial-gradient(circle at center, #001a12, #000);
   color: var(--neon-green);
@@ -76,6 +81,8 @@ body.light {
   flex-direction: column;
   align-items: center;
   gap: 18px;
+  position: relative;
+  z-index: 1;
 }
 .hero-logo {
   width: 130px;
@@ -95,6 +102,22 @@ body.light {
   color: var(--white);
   opacity: 0.9;
   margin-bottom: 1rem;
+}
+
+/* Hero watermark */
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  width: 300px;
+  pointer-events: none;
+  z-index: 0;
+}
+body.light-theme .hero-outer {
+  background: #e5f2f1;
+  color: #202124;
 }
 
 /* Buttons */
@@ -129,6 +152,15 @@ body.light {
   background: rgba(0, 255, 159, 0.1);
   box-shadow: 0 0 15px var(--neon-green);
 }
+body.light-theme .btn.primary {
+  background: var(--accent-blue);
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-blue);
+}
+body.light-theme .btn.ghost {
+  border-color: #00bcd4;
+  color: #00bcd4;
+}
 
 /* Sections */
 .section {
@@ -141,11 +173,18 @@ body.light {
   text-align: center;
   text-shadow: 0 0 12px var(--neon-green);
 }
+body.light-theme .section h2 {
+  color: var(--accent-blue);
+  text-shadow: none;
+}
 .section p {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
   color: var(--text-dark);
+}
+body.light-theme .section p {
+  color: #202124;
 }
 
 /* Project Cards */
@@ -168,6 +207,11 @@ body.light {
   transform: translateY(-6px);
   box-shadow: 0 0 20px var(--neon-green);
 }
+body.light-theme .project-card {
+  background: #fff;
+  color: #202124;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 .project-card img {
   width: 100%;
   height: 160px;
@@ -179,6 +223,9 @@ body.light {
 .project-body h3 {
   margin-bottom: 8px;
   color: var(--neon-green);
+}
+body.light-theme .project-body h3 {
+  color: var(--accent-blue);
 }
 
 /* Contact */
@@ -194,12 +241,23 @@ body.light {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,255,159,0.1);
 }
+body.light-theme .contact-card {
+  background: #fff;
+  color: #202124;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
 .contact-card h3 {
+  color: var(--accent-blue);
+}
+body.light-theme .contact-card h3 {
   color: var(--accent-blue);
 }
 .contact-card a {
   color: var(--neon-green);
   text-decoration: none;
+}
+body.light-theme .contact-card a {
+  color: var(--accent-blue);
 }
 .contact-card a:hover {
   text-decoration: underline;
@@ -215,6 +273,13 @@ input, textarea {
   font-family: inherit;
   background: #0f1a1a;
   color: var(--neon-green);
+  transition: all 0.3s ease;
+}
+body.light-theme input,
+body.light-theme textarea {
+  background: #fff;
+  color: #202124;
+  border: 1px solid #ccc;
 }
 
 /* Footer */
@@ -224,6 +289,11 @@ input, textarea {
   padding: 20px 0;
   margin-top: 40px;
   border-top: 1px solid var(--neon-green);
+}
+body.light-theme .footer {
+  background: #f5f6fa;
+  color: #202124;
+  border-top: 1px solid #ccc;
 }
 .footer-inner {
   display: flex;
@@ -238,6 +308,9 @@ input, textarea {
   text-decoration: none;
   position: relative;
 }
+body.light-theme .footer .dev-link {
+  color: var(--accent-blue);
+}
 .footer .dev-link:hover {
   color: var(--accent-blue);
 }
@@ -245,6 +318,9 @@ input, textarea {
   color: var(--neon-green);
   margin-left: 12px;
   text-decoration: none;
+}
+body.light-theme .social-links a {
+  color: var(--accent-blue);
 }
 .social-links a:hover {
   color: var(--accent-blue);
@@ -267,13 +343,14 @@ input, textarea {
   justify-content: center;
   font-size: 1.3rem;
   box-shadow: 0 0 15px var(--neon-green);
+  transition: all 0.3s ease;
 }
 #topBtn:hover {
   background: var(--accent-blue);
   color: var(--white);
 }
 
-/* Reveal */
+/* Reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -292,5 +369,21 @@ input, textarea {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .social-links {
+    margin-top: 10px;
+  }
+  .social-links a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .name {
+    font-size: 2rem;
   }
 }

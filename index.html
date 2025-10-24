@@ -7,15 +7,18 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
 
-  <!-- ✅ Favicon (SCode Logo from GitHub raw URL) -->
+  <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
 
-  <!-- Theme preference for system detection -->
+  <!-- Theme preference -->
   <meta name="color-scheme" content="light dark">
 </head>
 
-<body class="light-theme">
+<body class="dark-theme">
+  <!-- Background overlay for particles/matrix -->
+  <div id="backgroundParticles"></div>
+
   <!-- Theme toggle -->
   <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
 
@@ -24,21 +27,19 @@
     <div class="container hero-inner">
       <div class="logo-wrap">
         <a href="index.html">
-          <!-- ✅ Main Logo -->
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo">
+          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
         </a>
       </div>
       <div class="hero-text">
-        <h1 class="name">SCode</h1>
+        <h1 class="name glitch">SCode</h1>
         <p class="tagline"><span id="typed"></span></p>
         <div class="hero-cta">
-          <a class="btn primary" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
-          <a class="btn ghost" href="https://github.com/SCodeGit" target="_blank" rel="noopener">View GitHub</a>
+          <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
+          <a class="btn ghost neon-btn" href="https://github.com/SCodeGit" target="_blank" rel="noopener">View GitHub</a>
         </div>
       </div>
     </div>
-    <div class="hero-watermark">
-      <!-- ✅ Watermark -->
+    <div class="hero-watermark neon-watermark">
       <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="watermark" />
     </div>
   </header>
@@ -46,7 +47,7 @@
   <!-- About -->
   <section class="section about" id="about">
     <div class="container">
-      <h2>About</h2>
+      <h2 class="glitch">About</h2>
       <p>Hi — I’m <strong>SCode</strong>, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.</p>
     </div>
   </section>
@@ -54,22 +55,22 @@
   <!-- Projects -->
   <section class="section projects" id="projects">
     <div class="container">
-      <h2>Selected Projects</h2>
+      <h2 class="glitch">Selected Projects</h2>
       <div class="projects-grid">
-        <a class="project-card" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
+        <a class="project-card neon-glow" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
           <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters">
           <div class="project-body">
             <h3>Pacesetters Foundation</h3>
             <p>Multi-page NGO site: donations, programs, and team profiles.</p>
           </div>
         </a>
-        <div class="project-card placeholder">
+        <div class="project-card placeholder neon-glow">
           <div class="project-body">
             <h3>Project Two</h3>
             <p>Coming soon — demo and case study will be added here.</p>
           </div>
         </div>
-        <div class="project-card placeholder">
+        <div class="project-card placeholder neon-glow">
           <div class="project-body">
             <h3>Project Three</h3>
             <p>Coming soon — demo and case study will be added here.</p>
@@ -82,22 +83,22 @@
   <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 class="glitch">Contact</h2>
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="contact-card neon-glow">
           <h3>Get in touch</h3>
           <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
           <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
           <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
           <p>GitHub: <a href="https://github.com/SCodeGit" target="_blank" rel="noopener">SCodeGit</a></p>
         </div>
-        <div class="contact-card">
+        <div class="contact-card neon-glow">
           <h3>Message</h3>
           <form action="mailto:atubraabraham@gmail.com" method="post" enctype="text/plain">
             <input name="name" placeholder="Your name" required>
             <input name="email" type="email" placeholder="Your email" required>
             <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-            <button class="btn primary" type="submit">Send Email</button>
+            <button class="btn primary neon-btn" type="submit">Send Email</button>
           </form>
         </div>
       </div>
@@ -105,7 +106,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer neon-glow">
     <div class="container footer-inner">
       <div class="left">
         <strong>SCode</strong><br>
@@ -121,7 +122,7 @@
     </div>
   </footer>
 
-  <button id="topBtn" title="Back to top">↑</button>
+  <button id="topBtn" title="Back to top" class="neon-btn">↑</button>
 
   <!-- Script -->
   <script src="script.js"></script>

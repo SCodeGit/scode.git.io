@@ -1,130 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SCode — Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
+<section class="section projects" id="projects">
+  <div class="container">
+    <h2 class="glitch">Selected Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <a class="project-card neon-glow" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters Foundation">
+        <div class="project-body">
+          <h3>Pacesetters Foundation</h3>
+          <p>Multi-page NGO site: donations, programs, and team profiles.</p>
+        </div>
+      </a>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+      <!-- Project 2: Bowiri Traditional Council -->
+      <a class="project-card neon-glow" href="https://scodegit.github.io/Bowiri-Traditional-Council/index.html" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/35640ee45f84a217bdedf3ca4d4b45de0cab3731/images/durbar-of-chiefs.jpg" alt="Bowiri Traditional Council">
+        <div class="project-body">
+          <h3>Bowiri Traditional Council</h3>
+          <p>Official site showcasing Bowiri culture, chiefs, and heritage events.</p>
+        </div>
+      </a>
 
-  <!-- Theme preference -->
-  <meta name="color-scheme" content="light dark">
-</head>
-
-<body class="dark-theme">
-  <!-- Background overlay for particles/matrix -->
-  <div id="backgroundParticles"></div>
-
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
-
-  <!-- Header / Hero -->
-  <header class="hero-outer">
-    <div class="container hero-inner">
-      <div class="logo-wrap">
-        <a href="index.html">
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
-        </a>
-      </div>
-      <div class="hero-text">
-        <h1 class="name glitch">SCode</h1>
-        <p class="tagline"><span id="typed"></span></p>
-        <div class="hero-cta">
-          <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
-          <a class="btn ghost neon-btn" href="https://github.com/SCodeGit" target="_blank" rel="noopener">View GitHub</a>
+      <!-- Project 3 -->
+      <div class="project-card placeholder neon-glow">
+        <div class="project-body">
+          <h3>Project Three</h3>
+          <p>Coming soon — demo and case study will be added here.</p>
         </div>
       </div>
     </div>
-    <div class="hero-watermark neon-watermark">
-      <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="watermark" />
-    </div>
-  </header>
-
-  <!-- About -->
-  <section class="section about" id="about">
-    <div class="container">
-      <h2 class="glitch">About</h2>
-      <p>Hi — I’m <strong>SCode</strong>, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.</p>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <h2 class="glitch">Selected Projects</h2>
-      <div class="projects-grid">
-        <a class="project-card neon-glow" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters">
-          <div class="project-body">
-            <h3>Pacesetters Foundation</h3>
-            <p>Multi-page NGO site: donations, programs, and team profiles.</p>
-          </div>
-        </a>
-        <div class="project-card placeholder neon-glow">
-          <div class="project-body">
-            <h3>Project Two</h3>
-            <p>Coming soon — demo and case study will be added here.</p>
-          </div>
-        </div>
-        <div class="project-card placeholder neon-glow">
-          <div class="project-body">
-            <h3>Project Three</h3>
-            <p>Coming soon — demo and case study will be added here.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <h2 class="glitch">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-card neon-glow">
-          <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
-          <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
-          <p>GitHub: <a href="https://github.com/SCodeGit" target="_blank" rel="noopener">SCodeGit</a></p>
-        </div>
-        <div class="contact-card neon-glow">
-          <h3>Message</h3>
-          <form action="mailto:atubraabraham@gmail.com" method="post" enctype="text/plain">
-            <input name="name" placeholder="Your name" required>
-            <input name="email" type="email" placeholder="Your email" required>
-            <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-            <button class="btn primary neon-btn" type="submit">Send Email</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer neon-glow">
-    <div class="container footer-inner">
-      <div class="left">
-        <strong>SCode</strong><br>
-        <small>© 2025 All Rights Reserved — built by 
-          <a class="dev-link" href="index.html">SCode</a>
-        </small>
-      </div>
-      <div class="right social-links">
-        <a href="https://github.com/SCodeGit" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/233555578864" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
-
-  <button id="topBtn" title="Back to top" class="neon-btn">↑</button>
-
-  <!-- Script -->
-  <script src="script.js"></script>
-</body>
-</html>
+  </div>
+</section>

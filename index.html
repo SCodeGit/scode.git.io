@@ -1,292 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SCode — Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
-  <meta name="color-scheme" content="light dark">
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    /* =========================
-       Base & Theme
-       ========================= */
-    :root{
-      --bg:#071018;              /* deep navy */
-      --panel:#0b1720;           /* slightly lighter */
-      --muted:#9fb0b9;
-      --neon:#00ff9f;
-      --accent:#7b61ff;
-      --glass: rgba(255,255,255,0.03);
-      --card-shadow: 0 8px 30px rgba(2,6,23,0.6);
-      --glass-border: rgba(255,255,255,0.04);
-      --success:#7CFC00;
-      --danger:#FF6B6B;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: radial-gradient(ellipse at 10% 10%, rgba(0,255,159,0.03), transparent 10%),
-                  linear-gradient(180deg,#03101a 0%, #071018 60%);
-      color:var(--muted);
-      font-family: "Inter", "Source Code Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding-bottom:80px;
-    }
-
-    /* Container */
-    .container{
-      width:calc(100% - 48px);
-      max-width:1100px;
-      margin:0 auto;
-    }
-
-    /* Neon logo / header */
-    .hero-outer{
-      padding:28px 0;
-      position:relative;
-    }
-    .hero-inner{
-      display:flex;
-      gap:18px;
-      align-items:center;
-    }
-    .logo-wrap img{
-      width:84px;
-      height:84px;
-      border-radius:14px;
-      object-fit:cover;
-      box-shadow: 0 6px 30px rgba(0,255,159,0.06), 0 1px 0 rgba(255,255,255,0.02) inset;
-      border:1px solid rgba(0,255,159,0.08);
-    }
-    .hero-text{flex:1}
-    .name{
-      margin:0;
-      font-weight:600;
-      font-size:34px;
-      color:#e6f7f0;
-      letter-spacing:0.6px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-family: "Source Code Pro", monospace;
-    }
-    .tagline{
-      margin:6px 0 0 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .hero-cta .btn{
-      display:inline-block;
-      margin-top:10px;
-      padding:8px 12px;
-      font-weight:600;
-      border-radius:10px;
-      text-decoration:none;
-      background:linear-gradient(90deg, rgba(0,255,159,0.08), rgba(123,97,255,0.06));
-      border:1px solid rgba(255,255,255,0.04);
-      color:var(--neon);
-      box-shadow: 0 6px 24px rgba(0,255,159,0.03);
-      backdrop-filter: blur(6px);
-    }
-
-    /* Sections */
-    .section{padding:32px 0}
-    h2.glitch{
-      margin:10px 0 18px 0;
-      color:#dffcf0;
-      font-size:18px;
-      display:inline-block;
-      border-left:4px solid rgba(0,255,159,0.12);
-      padding-left:12px;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:1px;
-    }
-
-    /* Projects grid */
-    .projects-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-      align-items:start;
-    }
-    .project-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border:1px solid var(--glass-border);
-      padding:12px;
-      border-radius:12px;
-      box-shadow:var(--card-shadow);
-      transition:transform .18s ease, box-shadow .18s ease;
-      text-decoration:none;
-      color:inherit;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      overflow:hidden;
-    }
-    .project-card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.6); }
-    .project-card img{ width:100%; height:140px; object-fit:cover; border-radius:8px; }
-    .project-body h3{ margin:0; font-size:16px; color:#eafff1; font-weight:600; }
-    .project-body p{ margin:4px 0 0 0; color:var(--muted); font-size:13px; }
-
-    /* Contact grid */
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-    }
-    @media (max-width:800px){
-      .hero-inner{flex-direction:row}
-      .contact-grid{grid-template-columns:1fr}
-      .hero-text{padding-right:8px}
-    }
-
-    .contact-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-      border-radius:12px;
-      padding:18px;
-      border:1px solid var(--glass-border);
-      box-shadow: var(--card-shadow);
-    }
-
-    /* Form styles - compact and tight */
-    form#contactForm{
-      display:flex;
-      flex-direction:column;
-      gap:8px; /* small gap to reduce vertical space */
-    }
-
-    #contactForm input,
-    #contactForm textarea{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.04);
-      padding:10px 12px;
-      border-radius:8px;
-      color:#e6f7f0;
-      font-size:14px;
-      outline:none;
-      transition:box-shadow .12s ease, border-color .12s ease;
-      width:100%;
-    }
-    #contactForm input:focus,
-    #contactForm textarea:focus{
-      border-color: rgba(0,255,159,0.45);
-      box-shadow:0 8px 30px rgba(0,255,159,0.04);
-    }
-    #contactForm textarea{
-      min-height:92px;
-      resize:vertical;
-    }
-
-    .btn.primary{
-      background:linear-gradient(90deg, rgba(0,255,159,0.06), rgba(123,97,255,0.06));
-      color:var(--neon);
-      border:1px solid rgba(0,255,159,0.12);
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:600;
-      cursor:pointer;
-      width:fit-content;
-    }
-
-    #formStatus{
-      margin-top:6px;
-      font-weight:600;
-      font-size:13px;
-      color:var(--muted);
-      padding:6px 8px;
-      border-radius:8px;
-      display:inline-block;
-      text-shadow: none;
-    }
-
-    #formStatus.success{
-      color:var(--success);
-      text-shadow:0 0 8px rgba(124,252,0,0.08);
-    }
-    #formStatus.error{
-      color:var(--danger);
-      text-shadow:0 0 8px rgba(255,107,107,0.06);
-    }
-
-    /* Footer */
-    .footer{
-      position:fixed;
-      left:0; right:0; bottom:0;
-      padding:12px 0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(3,7,10,0.6));
-      border-top:1px solid rgba(255,255,255,0.02);
-      backdrop-filter: blur(6px);
-    }
-    .footer-inner{ display:flex; justify-content:space-between; align-items:center; gap:16px; width:100%; max-width:1100px; margin:0 auto; padding:0 24px; color:var(--muted); }
-    .social-links a{ color:var(--muted); margin-left:12px; text-decoration:none; font-size:14px; }
-    .social-links a:hover{ color:var(--neon) }
-
-    /* Top button */
-    #topBtn{
-      position:fixed;
-      right:18px;
-      bottom:74px;
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.04);
-      color:var(--neon);
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
-      box-shadow:0 8px 24px rgba(0,0,0,0.6);
-    }
-
-    /* Theme toggle */
-    .theme-toggle{
-      position:fixed;
-      right:18px;
-      top:18px;
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.04);
-      color:var(--neon);
-      padding:8px 10px;
-      border-radius:10px;
-      cursor:pointer;
-    }
-
-    /* Neon glow class (used sparingly) */
-    .neon-glow{ box-shadow: 0 0 14px rgba(0,255,159,0.06), 0 0 28px rgba(123,97,255,0.02); }
-
-    /* Small responsive tweaks */
-    @media (max-width:480px){
-      .name{ font-size:22px }
-      .logo-wrap img{ width:64px; height:64px }
-    }
-  </style>
+  <!-- Theme preference -->
+  <meta name="color-scheme" content="light dark">
 </head>
 <body class="dark-theme">
-  <!-- subtle matrix overlay -->
+
+  <!-- Background overlay for particles/matrix -->
   <canvas id="bgCanvas" style="position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.06"></canvas>
 
   <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
 
   <!-- Header / Hero -->
   <header class="hero-outer">
     <div class="container hero-inner">
       <div class="logo-wrap">
-        <a href="index.html" aria-label="SCode home">
+        <a href="index.html">
           <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
         </a>
       </div>
-
       <div class="hero-text">
         <h1 class="name glitch">SCode <small style="font-size:12px;color:var(--muted);margin-left:6px">— Developer</small></h1>
         <p class="tagline"><span id="typed">Creative developer — design, code & UX</span></p>
@@ -294,7 +37,7 @@
           <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
         </div>
       </div>
-    </div> <!-- close hero-inner -->
+    </div>
   </header>
 
   <!-- About -->
@@ -347,37 +90,21 @@
       <h2 class="glitch">Contact</h2>
       <div class="contact-grid">
 
-        <div class="contact-card neon-glow" aria-label="Contact details">
+        <div class="contact-card neon-glow">
           <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:atubraabraham@gmail.com" style="color:var(--neon)">atubraabraham@gmail.com</a></p>
-          <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener" style="color:var(--neon)">+233 55 557 8864</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener" style="color:var(--neon)">Atubra Abraham</a></p>
+          <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
+          <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
+          <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
         </div>
 
-        <div class="contact-card neon-glow" aria-label="Contact form">
+        <div class="contact-card neon-glow">
           <h3>Message</h3>
-
-          <!-- Formspree + AJAX form -->
-          <form id="contactForm" aria-label="Contact form (sends to SCode)" autocomplete="on" novalidate>
-            <!-- honeypot to deter bots -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-            <label style="display:none" for="name">Your name</label>
-            <input id="name" name="name" placeholder="Your name" required aria-label="Your name" autocomplete="name">
-
-            <label style="display:none" for="email">Your email</label>
-            <input id="email" name="email" type="email" placeholder="Your email" required aria-label="Your email" autocomplete="email">
-
-            <label style="display:none" for="message">Your message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Your message" required aria-label="Your message"></textarea>
-
-            <!-- Optionally send subject or source -->
-            <input type="hidden" name="_subject" value="New message from SCode portfolio">
-            <input type="hidden" name="_language" value="en">
-
-            <button class="btn primary neon-btn" type="submit" aria-live="polite">Send</button>
-
-            <p id="formStatus" role="status" aria-live="polite"></p>
+          <form id="contactForm" autocomplete="on" novalidate>
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+            <button class="btn primary neon-btn" type="submit">Send</button>
+            <p id="formStatus" role="status" aria-live="polite" style="margin-top:10px;"></p>
           </form>
         </div>
 
@@ -386,11 +113,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer neon-glow" role="contentinfo">
+  <footer class="footer neon-glow">
     <div class="container footer-inner">
       <div class="left">
         <strong>SCode</strong><br>
-        <small>© 2025 All Rights Reserved — built by <a class="dev-link" href="index.html" style="color:var(--neon)">SCode</a></small>
+        <small>© 2025 All Rights Reserved — built by 
+          <a class="dev-link" href="index.html">SCode</a>
+        </small>
       </div>
       <div class="right social-links">
         <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Facebook</a>
@@ -399,218 +128,110 @@
     </div>
   </footer>
 
-  <button id="topBtn" title="Back to top" class="neon-btn" aria-label="Back to top">↑</button>
+  <button id="topBtn" title="Back to top" class="neon-btn">↑</button>
 
-  <!-- Scripts: AJAX + UI -->
+  <!-- Scripts -->
   <script>
-    /* ---------------------------
-       Form: AJAX submit to Formspree
-       --------------------------- */
-    (function(){
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
+    // ================================
+    // Contact Form Submission (Formspree)
+    // ================================
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
 
-      // your Formspree endpoint
-      const FORMSPREE_URL = 'https://formspree.io/f/xwpwvqaz';
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent page reload
+      const formData = new FormData(form);
 
-      // Clear status on new input
-      form.addEventListener('input', () => {
-        status.textContent = '';
-        status.className = '';
-      });
-
-      form.addEventListener('submit', async function(e){
-        e.preventDefault();
-
-        // quick client-side validation
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const message = form.message.value.trim();
-        if(!name || !email || !message){
-          status.className = 'error';
-          status.textContent = '❌ Please complete all fields.';
-          return;
-        }
-
-        // prevent bots (simple)
-        if(form._gotcha && form._gotcha.value){
-          // silently drop
-          return;
-        }
-
-        const fd = new FormData(form);
-
-        try {
-          const resp = await fetch(FORMSPREE_URL, {
-            method: 'POST',
-            body: fd,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (resp.ok) {
-            status.className = 'success';
-            status.textContent = '✅ Message sent successfully. I will reply shortly.';
-            form.reset();
-          } else {
-            const data = await resp.json().catch(()=>null);
-            if (data && data.errors) {
-              status.className = 'error';
-              status.textContent = '❌ ' + data.errors.map(e => e.message).join(', ');
+      fetch('https://formspree.io/f/xwpwvqaz', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.style.color = 'lime';
+          status.textContent = '✅ Message sent successfully! Thank you.';
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (data.errors) {
+              status.style.color = 'red';
+              status.textContent = '❌ Error sending message: ' + data.errors.map(e => e.message).join(', ');
             } else {
-              status.className = 'error';
-              status.textContent = '❌ An error occurred. Please try again later.';
+              status.style.color = 'red';
+              status.textContent = '❌ Something went wrong. Please try again later.';
             }
-          }
-        } catch (err) {
-          status.className = 'error';
-          status.textContent = '❌ Network error. Check your connection and try again.';
+          });
         }
+      }).catch(error => {
+        status.style.color = 'red';
+        status.textContent = '❌ Network error. Please try again later.';
       });
-    })();
+    });
 
-    /* ---------------------------
-       Theme toggle (light/dark)
-       --------------------------- */
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      const body = document.body;
-      const KEY = 'scode_theme';
-      const saved = localStorage.getItem(KEY);
-      if(saved === 'light') body.classList.remove('dark-theme');
+    // ================================
+    // Theme Toggle
+    // ================================
+    const themeBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('scode_theme');
+    if(savedTheme === 'light') body.classList.remove('dark-theme');
 
-      btn.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        const isLight = !body.classList.contains('dark-theme');
-        localStorage.setItem(KEY, isLight ? 'light' : 'dark');
-        btn.textContent = isLight ? '☀️' : '🌙';
-      });
-    })();
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      const isLight = !body.classList.contains('dark-theme');
+      localStorage.setItem('scode_theme', isLight ? 'light' : 'dark');
+      themeBtn.textContent = isLight ? '☀️' : '🌙';
+    });
 
-    /* ---------------------------
-       Back to top button
-       --------------------------- */
-    (function(){
-      const topBtn = document.getElementById('topBtn');
-      topBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-    })();
+    // ================================
+    // Back to top button
+    // ================================
+    const topBtn = document.getElementById('topBtn');
+    topBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-    /* ---------------------------
-       Canvas background (subtle matrix / particles)
-       --------------------------- */
-    (function(){
-      const canvas = document.getElementById('bgCanvas');
-      const ctx = canvas.getContext('2d');
-      let w = canvas.width = innerWidth;
-      let h = canvas.height = innerHeight;
-      const cols = Math.floor(w / 20);
-      const ypos = Array(cols).fill(0);
-
-      function run() {
-        ctx.fillStyle = 'rgba(3,7,10,0.06)';
-        ctx.fillRect(0,0,w,h);
-        ctx.fillStyle = 'rgba(0,255,159,0.04)';
-        ctx.font = '12px monospace';
-
-        for (let i = 0; i < ypos.length; i++) {
-          const text = String.fromCharCode(65 + Math.random() * 33);
-          const x = i * 20;
-          ctx.fillText(text, x, ypos[i]);
-          ypos[i] = (ypos[i] > 100 + Math.random() * 10000) ? 0 : ypos[i] + 14;
-        }
-      }
-
-      let anim = setInterval(run, 85);
-      addEventListener('resize', ()=> {
-        clearInterval(anim);
-        w = canvas.width = innerWidth;
-        h = canvas.height = innerHeight;
-      });
-    })();
-  </script>
-</body>
-  <section class="section hero" id="hero">
-  <div class="container">
-    <div class="hero-text">
-      <h1 id="heroName" class="name glitch"></h1>
-      <p id="heroIntro"></p>
-      <div class="hero-cta">
-        <a id="hireBtn" class="btn primary neon-btn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .hero-text {
-    font-family: "Source Code Pro", monospace;
-    color: #00ff9f;
-    overflow: hidden;
-  }
-
-  .name, #heroIntro {
-    margin: 10px 0;
-  }
-
-  /* Cursor effect */
-  .typewriter-cursor {
-    display: inline-block;
-    width: 2px;
-    background-color: #00ff9f;
-    margin-left: 2px;
-    animation: blinkCursor 0.8s steps(1) infinite;
-  }
-
-  @keyframes blinkCursor {
-    0%,50%{opacity:1;}
-    51%,100%{opacity:0;}
-  }
-
-  /* Button animation */
-  #hireBtn {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-
-  #hireBtn.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-<script>
-  const nameText = "I’m SCode";
-  const introText = "Hi — I’m SCode, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.";
-
-  const nameEl = document.getElementById("heroName");
-  const introEl = document.getElementById("heroIntro");
-  const hireBtn = document.getElementById("hireBtn");
-
-  function typeWriter(el, text, speed = 50, callback = null) {
+    // ================================
+    // Typed text effect
+    // ================================
+    const typedEl = document.getElementById('typed');
+    const text = "Creative developer — design, code & UX";
     let i = 0;
-    const cursor = document.createElement("span");
-    cursor.className = "typewriter-cursor";
-    el.appendChild(cursor);
-
-    function type() {
-      if (i < text.length) {
-        cursor.insertAdjacentText("beforebegin", text.charAt(i));
+    function typeWriter() {
+      if(i <= text.length){
+        typedEl.innerHTML = text.slice(0,i) + (i % 2 === 0 ? "|" : "");
         i++;
-        setTimeout(type, speed);
-      } else {
-        if(callback) callback();
+        setTimeout(typeWriter, 100);
       }
     }
+    typeWriter();
 
-    type();
-  }
+    // ================================
+    // Background Matrix/Particles
+    // ================================
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = innerWidth;
+    let h = canvas.height = innerHeight;
+    const cols = Math.floor(w / 20);
+    const ypos = Array(cols).fill(0);
 
-  // Start typing sequence
-  typeWriter(nameEl, nameText, 100, () => {
-    typeWriter(introEl, introText, 40, () => {
-      hireBtn.classList.add("show"); // show button after typing done
+    function run() {
+      ctx.fillStyle = 'rgba(3,7,10,0.06)';
+      ctx.fillRect(0,0,w,h);
+      ctx.fillStyle = 'rgba(0,255,159,0.04)';
+      ctx.font = '12px monospace';
+      for (let i=0;i<ypos.length;i++){
+        const text = String.fromCharCode(65 + Math.random()*33);
+        ctx.fillText(text,i*20,ypos[i]);
+        ypos[i] = (ypos[i] > 100 + Math.random()*10000) ? 0 : ypos[i]+14;
+      }
+    }
+    let anim = setInterval(run,85);
+    window.addEventListener('resize',()=>{
+      clearInterval(anim);
+      w = canvas.width = innerWidth;
+      h = canvas.height = innerHeight;
+      anim = setInterval(run,85);
     });
-  });
-</script>
-
+  </script>
+</body>
 </html>

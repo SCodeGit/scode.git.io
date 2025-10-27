@@ -29,20 +29,51 @@
         <a href="index.html">
           <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
         </a>
-<div class="hero-text" style="line-height:1.2;">
-  <h1 class="name glitch">Developer <small style="font-size:12px;color:var(--muted);margin-left:6px">— SCode</small></h1>
-  <p class="tagline" style="margin-top:4px;"><span id="typed">Crafting sleek, responsive web experiences with precision and creativity.</span></p>
-  <div class="hero-cta" style="margin-top:8px;">
-    <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
-  </div>
-</div>
+<script>
+  // Typewriter function
+  function typeWriter(element, text, speed = 40, callback = null) {
+    let i = 0;
+    element.textContent = '';
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else if (callback) {
+        callback();
+      }
+    }
+    type();
+  }
 
-<!-- Professional Introduction -->
-<section class="section about" id="about" style="padding-top:40px;">
-  <div class="container" style="line-height:1.4;">
-    <p>Hi, I’m <strong>SCode</strong>. I specialize in building modern, responsive websites for startups, NGOs, and businesses, blending design, code, and user experience with precision and creativity.</p>
-  </div>
-</section>
+  // Hero section elements
+  const titleEl = document.querySelector('.name');
+  const titleSmall = titleEl.querySelector('small');
+  const taglineEl = document.getElementById('typed');
+  const btnEl = document.getElementById('whatsappBtn');
+
+  // Hero text content
+  const titleText = 'SCode';
+  const titleSuffix = ' — Developer';
+  const taglineText = 'Crafting sleek, responsive web experiences with precision and creativity.';
+  const btnText = 'Hire Me (WhatsApp)';
+
+  // About/intro paragraph
+  const introEl = document.querySelector('#about p');
+  const introText = 'Hi, I’m SCode. I specialize in building modern, responsive websites for startups, NGOs, and businesses, blending design, code, and user experience with precision and creativity.';
+
+  // Animate hero section sequentially
+  typeWriter(titleEl, titleText, 50, () => {
+    titleSmall.textContent = titleSuffix;
+    typeWriter(taglineEl, taglineText, 30, () => {
+      typeWriter(btnEl, btnText, 40, () => {
+        // After hero finishes, animate intro
+        typeWriter(introEl, introText, 25);
+      });
+    });
+  });
+</script>
+
 
   </section>
 

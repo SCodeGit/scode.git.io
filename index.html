@@ -528,4 +528,89 @@
     })();
   </script>
 </body>
+  <section class="section hero" id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1 id="heroName" class="name glitch"></h1>
+      <p id="heroIntro"></p>
+      <div class="hero-cta">
+        <a id="hireBtn" class="btn primary neon-btn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-text {
+    font-family: "Source Code Pro", monospace;
+    color: #00ff9f;
+    overflow: hidden;
+  }
+
+  .name, #heroIntro {
+    margin: 10px 0;
+  }
+
+  /* Cursor effect */
+  .typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #00ff9f;
+    margin-left: 2px;
+    animation: blinkCursor 0.8s steps(1) infinite;
+  }
+
+  @keyframes blinkCursor {
+    0%,50%{opacity:1;}
+    51%,100%{opacity:0;}
+  }
+
+  /* Button animation */
+  #hireBtn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+  #hireBtn.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const nameText = "I’m SCode";
+  const introText = "Hi — I’m SCode, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.";
+
+  const nameEl = document.getElementById("heroName");
+  const introEl = document.getElementById("heroIntro");
+  const hireBtn = document.getElementById("hireBtn");
+
+  function typeWriter(el, text, speed = 50, callback = null) {
+    let i = 0;
+    const cursor = document.createElement("span");
+    cursor.className = "typewriter-cursor";
+    el.appendChild(cursor);
+
+    function type() {
+      if (i < text.length) {
+        cursor.insertAdjacentText("beforebegin", text.charAt(i));
+        i++;
+        setTimeout(type, speed);
+      } else {
+        if(callback) callback();
+      }
+    }
+
+    type();
+  }
+
+  // Start typing sequence
+  typeWriter(nameEl, nameText, 100, () => {
+    typeWriter(introEl, introText, 40, () => {
+      hireBtn.classList.add("show"); // show button after typing done
+    });
+  });
+</script>
+
 </html>

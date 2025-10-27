@@ -90,15 +90,55 @@
           <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
         </div>
 
-     <div class="contact-card neon-glow">
+ <div class="contact-card neon-glow">
   <h3>Message</h3>
-  <form action="https://formspree.io/f/xwpwvqaz" method="POST">
+  <form id="contactForm">
     <input name="name" placeholder="Your name" required>
     <input name="email" type="email" placeholder="Your email" required>
     <textarea name="message" rows="4" placeholder="Your message" required></textarea>
     <button class="btn primary neon-btn" type="submit">Send</button>
+    <p id="formStatus" style="margin-top:10px;"></p>
   </form>
 </div>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent page reload
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/xwpwvqaz', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.style.color = 'lime';
+        status.textContent = '✅ Message sent successfully! Thank you.';
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (data.errors) {
+            status.style.color = 'red';
+            status.textContent = '❌ Error sending message: ' + data.errors.map(e => e.message).join(', ');
+          } else {
+            status.style.color = 'red';
+            status.textContent = '❌ Something went wrong. Please try again later.';
+          }
+        });
+      }
+    }).catch(error => {
+      status.style.color = 'red';
+      status.textContent = '❌ Network error. Please try again later.';
+    });
+  });
+</script>
+
       </div>
     </div>
   </section>

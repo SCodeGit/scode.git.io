@@ -5,111 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SCode — Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
-
-  <!-- Favicon -->
+  <meta name="description" content="SCode — Creative developer passionate about design, code, and user experience." />
   <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
-
-  <!-- Theme preference -->
-  <meta name="color-scheme" content="light dark">
 </head>
+
 <body class="dark-theme">
-  <!-- Background overlay for particles/matrix -->
   <div id="backgroundParticles"></div>
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
 
   <!-- Header / Hero -->
-  <header class="hero-outer">
+  <header class="hero-outer" data-cms-edit="true">
     <div class="container hero-inner">
       <div class="logo-wrap">
         <a href="index.html">
           <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
         </a>
       </div>
-      <div class="hero-text" style="line-height:1.2;">
+      <div class="hero-text">
         <h1 class="name glitch">SCode</h1>
-        <p class="tagline"><span id="typed"></span></p>
+        <p class="tagline"><span id="typed">Hi, I’m SCode — a creative developer passionate about design, code, and user experience.</span></p>
         <div class="hero-cta">
-          <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
+          <a class="btn primary neon-btn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me</a>
+          <a class="btn ghost neon-btn" href="https://github.com/SCodeGit" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- About / Intro -->
-  <section class="section about" id="about" style="padding-top:40px;">
-    <div class="container" style="line-height:1.4;">
-      <p><span id="typedIntro"></span></p>
+  <!-- About -->
+  <section class="section about" data-cms-edit="true">
+    <div class="container">
+      <h2 class="glitch">About</h2>
+      <p>Hi — I’m <strong>SCode</strong>, a creative developer passionate about design, code, and user experience. I build clean, responsive websites for NGOs, startups, and businesses.</p>
     </div>
   </section>
 
   <!-- Projects -->
-  <section class="section projects" id="projects">
+  <section class="section projects" data-cms-edit="true">
     <div class="container">
       <h2 class="glitch">Selected Projects</h2>
       <div class="projects-grid">
-
-        <!-- Project 1 -->
         <a class="project-card neon-glow" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters Foundation">
+          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters">
           <div class="project-body">
             <h3>Pacesetters Foundation</h3>
-            <p>Multi-page NGO site with donation and community sections.</p>
+            <p>Multi-page NGO site: donations, programs, and team profiles.</p>
           </div>
         </a>
-
-        <!-- Project 2 -->
-        <a class="project-card neon-glow" href="https://scodegit.github.io/Bowiri-Traditional-Council/index.html" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/28857d96cf2048e159e3a22335a78a7f13cf84a6/king%20logo.png" alt="Bowiri Traditional Council">
+        <div class="project-card neon-glow">
           <div class="project-body">
             <h3>Bowiri Traditional Council</h3>
-            <p>Elegant traditional council website highlighting culture, leadership, and heritage.</p>
-          </div>
-        </a>
-
-        <!-- Project 3 placeholder -->
-        <div class="project-card placeholder neon-glow">
-          <div class="project-body">
-            <h3>Project Three</h3>
-            <p>Coming soon — demo and case study will be added here.</p>
+            <p>Official website showcasing heritage, leadership, and community development.</p>
+            <a href="https://scodegit.github.io/Bowiri-Traditional-Council/" target="_blank" rel="noopener">Visit site →</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section contact" id="contact">
+  <section class="section contact" data-cms-edit="true">
     <div class="container">
       <h2 class="glitch">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-card neon-glow">
-          <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
-          <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
-        </div>
-
-        <div class="contact-card neon-glow">
-          <h3>Message</h3>
-          <form id="contactForm">
-            <input name="name" placeholder="Your name" required>
-            <input name="email" type="email" placeholder="Your email" required>
-            <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-            <button class="btn primary neon-btn" type="submit">Send</button>
-            <p id="formStatus" style="margin-top:10px;"></p>
-          </form>
-        </div>
-
-      </div>
+      <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer neon-glow">
+  <footer class="footer neon-glow" data-cms-edit="true">
     <div class="container footer-inner">
       <div class="left">
         <strong>SCode</strong><br>
@@ -117,76 +80,9 @@
           <a class="dev-link" href="index.html">SCode</a>
         </small>
       </div>
-      <div class="right social-links">
-        <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/233555578864" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
     </div>
   </footer>
 
-  <button id="topBtn" title="Back to top" class="neon-btn">↑</button>
-
-  <!-- Typewriter Script -->
-  <script>
-    function typeWriter(element, text, speed = 40, callback = null) {
-      let i = 0;
-      element.textContent = '';
-      function type() {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        } else if (callback) callback();
-      }
-      type();
-    }
-
-    // Hero animation
-    const typedEl = document.getElementById('typed');
-    typeWriter(typedEl, "Crafting sleek, responsive web experiences with precision and creativity.");
-
-    // About/Intro animation
-    const typedIntro = document.getElementById('typedIntro');
-    typeWriter(typedIntro, "Hi — I’m SCode. I specialize in building modern, responsive websites for startups, NGOs, and businesses, blending design, code, and user experience with precision and creativity.");
-  </script>
-
-  <!-- Contact Form Script -->
-  <script>
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
-
-      fetch('https://formspree.io/f/xwpwvqaz', {
-        method: 'POST',
-        body: formData,
-        headers: {'Accept': 'application/json'}
-      }).then(response => {
-        if (response.ok) {
-          status.style.color = 'lime';
-          status.textContent = '✅ Message sent successfully! Thank you.';
-          form.reset();
-        } else {
-          response.json().then(data => {
-            if (data.errors) {
-              status.style.color = 'red';
-              status.textContent = '❌ Error sending message: ' + data.errors.map(e => e.message).join(', ');
-            } else {
-              status.style.color = 'red';
-              status.textContent = '❌ Something went wrong. Please try again later.';
-            }
-          });
-        }
-      }).catch(error => {
-        status.style.color = 'red';
-        status.textContent = '❌ Network error. Please try again later.';
-      });
-    });
-  </script>
-
-  <!-- External Script -->
   <script src="script.js"></script>
 </body>
 </html>

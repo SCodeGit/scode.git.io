@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colleges of Education Awards Night</title>
+  <style>
+    /* ===== Dark Elegant Theme ===== */
+    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background:#0a0a0a; color:#f0f0f0; }
+    header {
+      text-align:center;
+      padding:3rem 1rem;
+      background: linear-gradient(135deg,#1c1c1c,#111111);
+      position:relative;
+      overflow:hidden;
+    }
+    header h1 {
+      font-size:2.5rem;
+      color: #ffd700; /* rich gold */
+      font-weight:bold;
+      margin-bottom:0.5rem;
+    }
+    header p { color:#ccc; font-size:1.1rem; }
+
+    /* subtle moving stripe effect */
+    header::before {
+      content:"";
+      position:absolute; top:0; left:-50%;
+      width:200%; height:100%;
+      background: linear-gradient(120deg, rgba(218,165,32,0.2), rgba(184,134,11,0.1), rgba(218,165,32,0.2));
+      transform: skewX(-25deg);
+      animation: stripeMove 5s linear infinite;
+      z-index:0;
+    }
+    @keyframes stripeMove {
+      0% { transform: translateX(-100%) skewX(-25deg); }
+      100% { transform: translateX(100%) skewX(-25deg); }
+    }
+
+    main { max-width:1200px; margin:2rem auto; padding:0 1rem; }
+
+    .category {
+      margin-bottom:1.5rem;
+      border:1px solid #333;
+      border-radius:12px;
+      overflow:hidden;
+      background: rgba(20,20,20,0.9);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .category-header {
+      padding:1.2rem 1rem;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:bold;
+      color:#ffd700;
+      font-size:1.2rem;
+      letter-spacing:1px;
+      text-shadow: 1px 1px 4px #000;
+      transition: background 0.3s ease;
+    }
+    .category-header:hover { background: rgba(255,215,0,0.05); }
+
+    .category-body {
+      display:none;
+      padding:1rem;
+      gap:1rem;
+      flex-wrap:wrap;
+      display:flex;
+      justify-content:flex-start;
+    }
+
+    .award-card {
+      background: linear-gradient(135deg,#ffd700,#b8860b);
+      color:#0a0a0a;
+      padding:1rem;
+      border-radius:12px;
+      min-width:220px;
+      flex:1 1 220px;
+      text-align:center;
+      font-weight:bold;
+      font-size:1rem;
+      letter-spacing:0.5px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .award-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow:0 10px 25px rgba(0,0,0,0.8);
+    }
+
+    .category-header span {
+      font-size:1.3rem;
+      transition: transform 0.3s ease;
+    }
+    .category.open .category-header span {
+      transform: rotate(90deg);
+    }
+
+    footer {
+      text-align:center;
+      padding:2rem 1rem;
+      color:#999;
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Colleges of Education Awards Night</h1>
+  <p>Explore all award categories and discover the top honorees</p>
+</header>
+
+<main>
+
+<!-- Category Template -->
+<div class="category">
+  <div class="category-header">
+    🎓 Academic Excellence
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Overall Best Academic Student</div>
+    <div class="award-card">Best Academic Student – Level 200</div>
+    <div class="award-card">Best Academic Student – Level 300</div>
+    <div class="award-card">Best Academic Student – Level 400</div>
+    <div class="award-card">Best Male Academic Student</div>
+    <div class="award-card">Best Female Academic Student</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    👩‍🏫 Teaching & Professional Practice
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Best Student Teacher (Level 100–300)</div>
+    <div class="award-card">Best Micro-Teaching Student (Level 400)</div>
+    <div class="award-card">Best Early Childhood Education Student</div>
+    <div class="award-card">Best JHS Education Student</div>
+    <div class="award-card">Best Primary Education Student</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    💻 Technology & Digital Innovation
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Best Tech-Savvy Student</div>
+    <div class="award-card">Best Educational Content Creator</div>
+    <div class="award-card">Best Graphic Designer</div>
+    <div class="award-card">Best Campus Photographer / Videographer</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    💼 Entrepreneurship & Business
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Student Entrepreneur of the Year</div>
+    <div class="award-card">Best Student-Owned Business</div>
+    <div class="award-card">Young Business Leader Award</div>
+    <div class="award-card">Best Online Business Student</div>
+    <div class="award-card">Creative Business Innovator</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    🌟 Leadership & Service
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Outstanding Student Leader</div>
+    <div class="award-card">Best Class Representative</div>
+    <div class="award-card">Student Volunteer of the Year</div>
+    <div class="award-card">Student Role Model Award</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    🎭 Talent & Creativity
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Best Public Speaker</div>
+    <div class="award-card">Best Debater</div>
+    <div class="award-card">Best Writer</div>
+    <div class="award-card">Best Drama / Theatre Performer</div>
+    <div class="award-card">Best Singer</div>
+    <div class="award-card">Best Dancer</div>
+    <div class="award-card">Most Fanfooler of the Year</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    ⚽ Sports & Extracurricular
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Sports Personality of the Year</div>
+    <div class="award-card">Best Male Athlete</div>
+    <div class="award-card">Best Female Athlete</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    🌍 Personality & Lifestyle
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Most Disciplined Student</div>
+    <div class="award-card">Most Influential Student</div>
+    <div class="award-card">Most Friendly Student</div>
+    <div class="award-card">Student Personality of the Year</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    😂 Fun Campus Awards
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Campus Comedian of the Year</div>
+    <div class="award-card">Most Social Student</div>
+  </div>
+</div>
+
+<div class="category">
+  <div class="category-header">
+    👗 Style & Campus Presence
+    <span>▶</span>
+  </div>
+  <div class="category-body">
+    <div class="award-card">Best Dressed Male</div>
+    <div class="award-card">Best Dressed Female</div>
+    <div class="award-card">Fashion Icon of the Year</div>
+    <div class="award-card">Most Stylish Student</div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  &copy; 2026 Colleges of Education Awards Night. All rights reserved.
+</footer>
+
+<script>
+  // Collapsible categories
+  document.querySelectorAll('.category').forEach(cat => {
+    cat.querySelector('.category-header').addEventListener('click', () => {
+      cat.classList.toggle('open');
+      const body = cat.querySelector('.category-body');
+      if(cat.classList.contains('open')) body.style.display = 'flex';
+      else body.style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

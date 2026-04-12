@@ -4,189 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SCode — Developer Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
+
   <meta name="description" content="SCode — Web developer. Creative developer passionate about design, code, and user experience." />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+  <link rel="icon" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
 
-  <!-- Theme preference -->
   <meta name="color-scheme" content="light dark">
 </head>
-<body class="dark-theme">
-  <!-- Background overlay for particles/matrix -->
-  <div id="backgroundParticles"></div>
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" title="Toggle light/dark" aria-label="Toggle theme">🌙</button>
 
-  <!-- Header / Hero -->
-  <header class="hero-outer">
-    <div class="container hero-inner">
-      <div class="logo-wrap">
-        <a href="index.html">
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode logo" class="hero-logo neon-glow">
-        </a>
-      </div>
-      <div class="hero-text" style="line-height:1.2;">
-        <h1 class="name glitch">SCode</h1>
-        <p class="tagline"><span id="typed"></span></p>
-        <div class="hero-cta">
-          <a class="btn primary neon-btn" id="whatsappBtn" href="https://wa.me/233555578864" target="_blank" rel="noopener">Hire Me (WhatsApp)</a>
-        </div>
-      </div>
+<body>
+
+<div id="backgroundParticles"></div>
+
+<button class="theme-toggle" id="themeToggle">🌙</button>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-inner">
+
+    <img class="logo" src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+
+    <div>
+      <h1 class="title">SCode</h1>
+      <p class="subtitle"><span id="typed"></span></p>
+
+      <a class="btn primary" href="https://wa.me/233555578864" target="_blank">
+        Hire Me (WhatsApp)
+      </a>
     </div>
-  </header>
 
-  <!-- About / Intro -->
-  <section class="section about" id="about" style="padding-top:40px;">
-    <div class="container" style="line-height:1.4;">
-      <p><span id="typedIntro"></span></p>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <h2 class="glitch">Selected Projects</h2>
-      <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <a class="project-card neon-glow" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters Foundation">
-          <div class="project-body">
-            <h3>Pacesetters Foundation</h3>
-            <p>Multi-page NGO site with donation and community sections.</p>
-          </div>
-        </a>
-
-        <!-- Project 2 -->
-        <a class="project-card neon-glow" href="https://scodegit.github.io/Bowiri-Traditional-Council/index.html" target="_blank" rel="noopener">
-          <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/28857d96cf2048e159e3a22335a78a7f13cf84a6/king%20logo.png" alt="Bowiri Traditional Council">
-          <div class="project-body">
-            <h3>Bowiri Traditional Council</h3>
-            <p>Elegant traditional council website highlighting culture, leadership, and heritage.</p>
-          </div>
-        </a>
-
-        <a class="project-card neon-glow" href="https://scode-coepasco.online/" target="_blank" rel="noopener">
-  <img src="https://raw.githubusercontent.com/SCodeGit/trial/main/favicon%20scode.jpg" 
-       alt="SCode COE Pasco">
-  <div class="project-body"> 
-    <h3>SCode COE Pasco</h3>
-    <p>Official past questions portal for Colleges of Education in Ghana, providing easy access to PDFs and learning resources.</p>
   </div>
-</a>
+</header>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <p><span id="typedIntro"></span></p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+  <div class="container">
+
+    <h2>Selected Projects</h2>
+
+    <div class="grid">
+
+      <a class="card" href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank">
+        <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+        <h3>Pacesetters Foundation</h3>
+        <p>NGO platform with donation system.</p>
+      </a>
+
+      <a class="card" href="https://scodegit.github.io/Bowiri-Traditional-Council/index.html" target="_blank">
+        <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/28857d96cf2048e159e3a22335a78a7f13cf84a6/king%20logo.png">
+        <h3>Bowiri Traditional Council</h3>
+        <p>Culture and heritage website.</p>
+      </a>
+
+      <a class="card" href="https://scode-coepasco.online/" target="_blank">
+        <img src="https://raw.githubusercontent.com/SCodeGit/trial/main/favicon%20scode.jpg">
+        <h3>SCode COE Pasco</h3>
+        <p>Past questions platform for colleges.</p>
+      </a>
+
+      <!-- NEW: SCodeOS -->
+      <a class="card" href="https://scodegit.github.io/SCodeOS/" target="_blank">
+        <img src="https://scodegit.github.io/SCodeOS/images/scode-logo.png">
+        <h3>SCodeOS</h3>
+        <p>Developer OS ecosystem & AI workspace.</p>
+      </a>
+
+      <!-- UPCOMING -->
+      <div class="card dim">
+        <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+        <h3>Coming Soon</h3>
+        <p>AI Learning Platform</p>
       </div>
+
+      <div class="card dim">
+        <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+        <h3>Coming Soon</h3>
+        <p>Trading Automation System</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <h2 class="glitch">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-card neon-glow">
-          <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:atubraabraham@gmail.com">atubraabraham@gmail.com</a></p>
-          <p>WhatsApp: <a href="https://wa.me/233555578864" target="_blank" rel="noopener">+233 55 557 8864</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Atubra Abraham</a></p>
-        </div>
+<!-- CONTACT -->
+<section class="section">
+  <div class="container grid2">
 
-        <div class="contact-card neon-glow">
-          <h3>Message</h3>
-          <form id="contactForm">
-            <input name="name" placeholder="Your name" required>
-            <input name="email" type="email" placeholder="Your email" required>
-            <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-            <button class="btn primary neon-btn" type="submit">Send</button>
-            <p id="formStatus" style="margin-top:10px;"></p>
-          </form>
-        </div>
-
-      </div>
+    <div class="box">
+      <h3>Contact</h3>
+      <p>Email: atubraabraham@gmail.com</p>
+      <p>WhatsApp: +233 55 557 8864</p>
+      <p>Facebook: Atubra Abraham</p>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer neon-glow">
-    <div class="container footer-inner">
-      <div class="left">
-        <strong>SCode</strong><br>
-        <small>© 2025 All Rights Reserved — built by 
-          <a class="dev-link" href="index.html">SCode</a>
-        </small>
-      </div>
-      <div class="right social-links">
-        <a href="https://www.facebook.com/people/Atubra-Abraham/100072576882412/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/233555578864" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+    <div class="box">
+      <h3>Message</h3>
+      <form id="contactForm">
+        <input name="name" placeholder="Name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button class="btn primary">Send</button>
+        <p id="formStatus"></p>
+      </form>
     </div>
-  </footer>
 
-  <button id="topBtn" title="Back to top" class="neon-btn">↑</button>
+  </div>
+</section>
 
-  <!-- Typewriter Script -->
-  <script>
-    function typeWriter(element, text, speed = 40, callback = null) {
-      let i = 0;
-      element.textContent = '';
-      function type() {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        } else if (callback) callback();
-      }
-      type();
+<footer class="footer">
+  <p>© 2025 SCode — Built with precision</p>
+</footer>
+
+<script>
+function typeWriter(el, text) {
+  let i = 0;
+  (function t() {
+    if (i < text.length) {
+      el.textContent += text[i++];
+      setTimeout(t, 35);
     }
+  })();
+}
 
-    // Hero animation
-    const typedEl = document.getElementById('typed');
-    typeWriter(typedEl, "Crafting sleek, responsive web experiences with precision and creativity.");
+typeWriter(document.getElementById("typed"),
+"Crafting modern, scalable web experiences.");
 
-    // About/Intro animation
-    const typedIntro = document.getElementById('typedIntro');
-    typeWriter(typedIntro, "Hi — I’m SCode. I specialize in building modern, responsive websites for startups, NGOs, and businesses, blending design, code, and user experience with precision and creativity.");
-  </script>
+typeWriter(document.getElementById("typedIntro"),
+"Hi — I’m SCode. I build modern websites for startups, NGOs, and businesses.");
 
-  <!-- Contact Form Script -->
-  <script>
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('formStatus');
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
 
-      fetch('https://formspree.io/f/xwpwvqaz', {
-        method: 'POST',
-        body: formData,
-        headers: {'Accept': 'application/json'}
-      }).then(response => {
-        if (response.ok) {
-          status.style.color = 'lime';
-          status.textContent = '✅ Message sent successfully! Thank you.';
-          form.reset();
-        } else {
-          response.json().then(data => {
-            if (data.errors) {
-              status.style.color = 'red';
-              status.textContent = '❌ Error sending message: ' + data.errors.map(e => e.message).join(', ');
-            } else {
-              status.style.color = 'red';
-              status.textContent = '❌ Something went wrong. Please try again later.';
-            }
-          });
-        }
-      }).catch(error => {
-        status.style.color = 'red';
-        status.textContent = '❌ Network error. Please try again later.';
-      });
-    });
-  </script>
+  fetch("https://formspree.io/f/xwpwvqaz", {
+    method: "POST",
+    body: data,
+    headers: { Accept: "application/json" }
+  }).then(r => {
+    status.textContent = "Message sent!";
+    form.reset();
+  });
+});
+</script>
 
-  <!-- External Script -->
-  <script src="script.js"></script>
 </body>
 </html>

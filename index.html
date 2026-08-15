@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>SCode — Atubra Abraham | Developer Portfolio </title>
+<title>SCode — Atubra Abraham | AI Engineer & Systems Architect</title>
 
-<meta name="description" content="SCode by Atubra Abraham —  developer building AI systems, SCode OS, and education platforms like SCode COE Pasco." />
-<meta name="keywords" content="Atubra Abraham, SCode, web developer , SCode OS, SCode Pasco, COE past questions , AI developer " />
+<meta name="description" content="Official portfolio of Atubra Abraham (SCode) — Building next-gen AI systems, SCode OS, and localized educational tech platforms in Ghana." />
+<meta name="keywords" content="Atubra Abraham, SCode, SCodeAI, SCode OS, AI Developer, Ghana Tech, SCode COE Pasco" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
+
+<!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Plus Jakarta Sans', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        colors: {
+          darkBg: '#05070b',
+          cardBg: '#0c1017',
+          cardHover: '#131b26',
+          brandAccent: '#3b82f6',
+          brandPurple: '#8b5cf6',
+          brandGreen: '#10b981',
+        },
+        animation: {
+          'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          'float': 'float 6s ease-in-out infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-8px)' },
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,7 +65,8 @@
       "sameAs": [
         "https://scodegit.github.io/SCodeOS/",
         "https://scode-coepasco.online/",
-        "https://bowiritraditionalarea23.com/"
+        "https://bowiritraditionalarea23.com/",
+        "https://scodegit.github.io/SCodeAI-Models/"
       ],
       "founder": {
         "@id": "https://scodegit.github.io/scode.git.io/#person"
@@ -33,280 +78,339 @@
       "name": "Atubra Abraham",
       "alternateName": "SCode",
       "image": "https://raw.githubusercontent.com/SCodeGit/SCode-Foundation/a4c12e5b92c858efe2882d28a84fbecbc5b670e4/SCode.jpeg",
-      "jobTitle": "Web Developer, Software Engineer, System Builder",
-      "url": "https://scodegit.github.io/scode.git.io/",
-      "sameAs": [
-        "https://scodegit.github.io/SCodeOS/",
-        "https://scode-coepasco.online/",
-        "https://bowiritraditionalarea23.com/"
-      ],
-      "worksFor": {
-        "@id": "https://scodegit.github.io/scode.git.io/#organization"
-      }
+      "jobTitle": "AI Engineer & Software Architect",
+      "url": "https://scodegit.github.io/scode.git.io/"
     }
   ]
 }
 </script>
-<meta name="author" content="Atubra Abraham - SCode" />
-
-<meta property="og:title" content="SCode Developer Portfolio" />
-<meta property="og:description" content="AI systems, OS development, and education platforms by Atubra Abraham." />
-
-<style>
-:root{
-  --bg:#070b14;
-  --panel:rgba(255,255,255,0.06);
-  --border:rgba(255,255,255,0.12);
-  --text:#eaf0ff;
-  --muted:rgba(234,240,255,0.65);
-
-  /* 🎨 NEW COLOR DEPTH SYSTEM */
-  --accent:#4da3ff;
-  --accent2:#a855f7;
-  --accent3:#22c55e;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:system-ui;
-}
-
-body{
-  background:
-    radial-gradient(circle at 15% 10%, rgba(77,163,255,0.25), transparent 40%),
-    radial-gradient(circle at 85% 30%, rgba(168,85,247,0.25), transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(34,197,94,0.15), transparent 50%),
-    var(--bg);
-  color:var(--text);
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  padding:60px 20px;
-}
-
-.hero img{
-  width:110px;
-  border-radius:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
-}
-
-h1{
-  font-size:44px;
-  font-weight:800;
-  letter-spacing:-1px;
-}
-
-.tag{
-  color:var(--muted);
-  max-width:600px;
-  margin:auto;
-  font-size:14px;
-}
-
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:11px 16px;
-  border-radius:12px;
-  color:white;
-  text-decoration:none;
-
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:1px solid rgba(255,255,255,0.15);
-  transition:0.25s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 30px rgba(77,163,255,0.25);
-}
-
-/* LAYOUT */
-.container{
-  width:min(1100px,92%);
-  margin:auto;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:25px;
-}
-
-/* CARD (IMPROVED COLOR DEPTH) */
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03));
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  text-decoration:none;
-  color:white;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--accent);
-  box-shadow:0 18px 40px rgba(0,0,0,0.35);
-}
-
-.card img{
-  width:100%;
-  height:165px;
-  object-fit:cover;
-}
-
-.card-body{
-  padding:13px;
-}
-
-.card-body h3{
-  font-size:15px;
-}
-
-.card-body p{
-  font-size:12.8px;
-  color:var(--muted);
-  line-height:1.4;
-}
-
-/* CONTACT */
-.contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:40px;
-}
-
-.box{
-  background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
-  padding:16px;
-  border-radius:16px;
-  border:1px solid var(--border);
-}
-
-/* INPUTS */
-input,textarea{
-  width:100%;
-  margin-top:8px;
-  padding:11px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:rgba(0,0,0,0.2);
-  color:white;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:25px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-footer a{
-  color:var(--accent);
-  text-decoration:none;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr);}
-}
-
-@media(max-width:600px){
-  .grid{grid-template-columns:1fr;}
-  .contact{grid-template-columns:1fr;}
-  h1{font-size:34px;}
-}
-</style>
 </head>
 
-<body>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
-<!-- HERO -->
-<header class="hero">
-  <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
-  <h1>SCode</h1>
-  <p class="tag">
-    Atubra Abraham — Ghana developer building AI systems, operating systems, and education platforms like SCode OS and SCode COE Pasco.
-  </p>
-  <a class="btn" href="https://wa.me/233555578864">Hire Me</a>
-</header>
+  <!-- Ambient Glow Gradients -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-<!-- PROJECTS -->
-<section class="container">
-  <h2>Projects</h2>
-
-  <div class="grid">
-
-    <a class="card" href="https://scodegit.github.io/pacesettersfoundation.github.io/">
-      <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg">
-      <div class="card-body">
-        <h3>Pacesetters Foundation</h3>
-        <p>NGO platform with donations and community tools.</p>
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-darkBg/80 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="relative">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
+          <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCode Logo" class="relative w-10 h-10 rounded-xl object-cover border border-slate-700">
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">SCode</span>
+          <span class="text-xs block text-blue-400 font-mono tracking-widest uppercase">Atubra Abraham</span>
+        </div>
       </div>
-    </a>
 
-    <a class="card" href="https://scodegit.github.io/Bowiri-Traditional-Council/">
-      <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/443434b9062f8562872d52377549bc43192a9c68/king%20logo.png">
-      <div class="card-body">
-        <h3>Bowiri Traditional Council</h3>
-        <p>Heritage and leadership digital platform.</p>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Expertise</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
       </div>
-    </a>
 
-    <a class="card" href="https://scode-coepasco.online/">
-      <img src="https://raw.githubusercontent.com/SCodeGit/trial/main/favicon%20scode.jpg">
-      <div class="card-body">
-        <h3>SCode COE Pasco</h3>
-        <p>Past questions platform for Colleges of Education in Ghana (PDF search + structured learning).</p>
+      <div>
+        <a href="https://wa.me/233555578864" target="_blank" class="relative group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-slate-800 border border-slate-700 hover:border-blue-500/50 transition-all shadow-lg">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Let's Talk</span>
+        </a>
       </div>
-    </a>
+    </div>
+  </nav>
 
-    <a class="card" href="https://scodegit.github.io/SCodeOS/">
-      <img src="https://scodegit.github.io/SCodeOS/images/scode-logo.png">
-      <div class="card-body">
-        <h3>SCode OS</h3>
-        <p>AI-first Linux system with GIS tools, secure offline computing, and developer workspace.</p>
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 w-full">
+
+    <!-- HERO SECTION -->
+    <header class="py-20 md:py-28 text-center relative">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium mb-8 animate-float shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+        Based in Ghana • Building Global AI Infrastructure
       </div>
-    </a>
 
-  </div>
-</section>
+      <div class="relative w-32 h-32 mx-auto mb-8 group">
+        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-3xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse-slow"></div>
+        <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Atubra Abraham" class="relative w-32 h-32 rounded-3xl object-cover border-2 border-slate-700 shadow-2xl">
+      </div>
 
-<!-- CONTACT -->
-<section class="container contact">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+        Architecting <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">AI & Systems</span>
+      </h1>
+      
+      <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
+        Hi, I'm <strong class="text-slate-200 font-semibold">Atubra Abraham (SCode)</strong>. A software engineer crafting intelligent platforms, custom OS architectures, and educational systems that scale.
+      </p>
 
-  <div class="box">
-    <h3>Contact</h3>
-    <p>Email: atubraabraham@gmail.com</p>
-    <p>WhatsApp: +233 55 557 8864</p>
-    <p>Location: </p>
-  </div>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#projects" class="px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition shadow-xl shadow-blue-600/20 border border-blue-400/20">
+          Explore Projects
+        </a>
+        <a href="https://github.com/SCodeGit" target="_blank" class="px-7 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-slate-900/80 hover:bg-slate-800 transition border border-slate-800 hover:border-slate-700">
+          GitHub Profile ↗
+        </a>
+      </div>
+    </header>
 
-  <div class="box">
-    <h3>Message</h3>
-    <form>
-      <input placeholder="Name">
-      <input placeholder="Email">
-      <textarea placeholder="Message"></textarea>
-    </form>
-  </div>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">Portfolio Showcase</span>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white">Featured Projects & Systems</h2>
+        </div>
+        
+        <!-- Search & Filter Input -->
+        <div class="relative w-full md:w-80">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 text-sm">🔍</span>
+          <input type="text" id="projectSearch" onkeyup="filterProjects()" placeholder="Search tech, title, tags..." class="w-full bg-cardBg border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+        </div>
+      </div>
 
-</section>
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
 
-<!-- FOOTER -->
-<footer>
-  © 2025 <a href="https://scodegit.github.io/">SCode</a> — Built by  SCode Groups
-</footer>
+        <!-- SCodeAI Models -->
+        <a href="https://scodegit.github.io/SCodeAI-Models/" target="_blank" class="card-item group bg-cardBg hover:bg-cardHover border border-slate-800 hover:border-blue-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl" data-keywords="scodeai models artificial intelligence machine learning huggingface safetensors">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="SCodeAI Models" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+              <span class="absolute top-3 right-3 bg-blue-500/20 backdrop-blur-md text-blue-300 border border-blue-500/30 text-xs font-mono px-2.5 py-1 rounded-lg">AI & Models</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition mb-2">SCodeAI Models</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Open-weights AI models, safetensors repositories, and localized machine learning architecture hubs.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-800/50">
+            <span>Weights & Hub</span>
+            <span class="text-blue-400 group-hover:translate-x-1 transition">View Hub →</span>
+          </div>
+        </a>
+
+        <!-- SCode OS -->
+        <a href="https://scodegit.github.io/SCodeOS/" target="_blank" class="card-item group bg-cardBg hover:bg-cardHover border border-slate-800 hover:border-blue-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl" data-keywords="scode os ai linux system gis offline computing developer workspace">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img src="https://scodegit.github.io/SCodeOS/images/scode-logo.png" alt="SCode OS" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+              <span class="absolute top-3 right-3 bg-purple-500/20 backdrop-blur-md text-purple-300 border border-purple-500/30 text-xs font-mono px-2.5 py-1 rounded-lg">System OS</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition mb-2">SCode OS</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">AI-first Linux system integrated with GIS tools, secure offline computing capabilities, and developer workspaces.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-800/50">
+            <span>Operating System</span>
+            <span class="text-blue-400 group-hover:translate-x-1 transition">Launch OS →</span>
+          </div>
+        </a>
+
+        <!-- SCode COE Pasco -->
+        <a href="https://scode-coepasco.online/" target="_blank" class="card-item group bg-cardBg hover:bg-cardHover border border-slate-800 hover:border-blue-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl" data-keywords="scode coe pasco colleges of education ghana past questions pdf search learning edtech">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img src="https://raw.githubusercontent.com/SCodeGit/trial/main/favicon%20scode.jpg" alt="SCode COE Pasco" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+              <span class="absolute top-3 right-3 bg-emerald-500/20 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-xs font-mono px-2.5 py-1 rounded-lg">EdTech</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition mb-2">SCode COE Pasco</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Comprehensive past questions portal for Colleges of Education in Ghana featuring instant PDF search and structured learning.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-800/50">
+            <span>Education Platform</span>
+            <span class="text-blue-400 group-hover:translate-x-1 transition">Visit Portal →</span>
+          </div>
+        </a>
+
+        <!-- Bowiri Traditional Council -->
+        <a href="https://scodegit.github.io/Bowiri-Traditional-Council/" target="_blank" class="card-item group bg-cardBg hover:bg-cardHover border border-slate-800 hover:border-blue-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl" data-keywords="bowiri traditional council heritage leadership culture ghana community">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img src="https://raw.githubusercontent.com/SCodeGit/Bowiri-Traditional-Council/443434b9062f8562872d52377549bc43192a9c68/king%20logo.png" alt="Bowiri Traditional Council" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+              <span class="absolute top-3 right-3 bg-amber-500/20 backdrop-blur-md text-amber-300 border border-amber-500/30 text-xs font-mono px-2.5 py-1 rounded-lg">Heritage</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition mb-2">Bowiri Traditional Council</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Digital community platform preserving local heritage, leadership announcements, and cultural archives.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-800/50">
+            <span>Cultural Portal</span>
+            <span class="text-blue-400 group-hover:translate-x-1 transition">Explore →</span>
+          </div>
+        </a>
+
+        <!-- Pacesetters Foundation -->
+        <a href="https://scodegit.github.io/pacesettersfoundation.github.io/" target="_blank" class="card-item group bg-cardBg hover:bg-cardHover border border-slate-800 hover:border-blue-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl" data-keywords="pacesetters foundation ngo community donations non-profit charity">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img src="https://raw.githubusercontent.com/SCodeGit/scode.git.io/main/images/scode.jpg" alt="Pacesetters Foundation" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+              <span class="absolute top-3 right-3 bg-indigo-500/20 backdrop-blur-md text-indigo-300 border border-indigo-500/30 text-xs font-mono px-2.5 py-1 rounded-lg">NGO / Charity</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition mb-2">Pacesetters Foundation</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">Non-profit foundation web platform equipped with digital donation workflows and social impact community tools.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-800/50">
+            <span>Non-Profit</span>
+            <span class="text-blue-400 group-hover:translate-x-1 transition">Support NGO →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- No Results State -->
+      <div id="noResults" class="hidden text-center py-16 bg-cardBg border border-slate-800 rounded-2xl mt-4">
+        <p class="text-slate-400 text-sm font-mono">No matching projects found for your query.</p>
+      </div>
+    </section>
+
+    <!-- CORE EXPERTISE -->
+    <section id="skills" class="py-16">
+      <div class="text-center mb-12">
+        <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">Capabilities</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Core Engineering Stack</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-cardBg border border-slate-800 p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 font-mono font-bold">AI</div>
+          <h3 class="text-lg font-bold text-white mb-2">AI Systems & Models</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Developing multimodal voice assistants, embedding local model weights (safetensors), and integrating transformer pipelines.</p>
+        </div>
+
+        <div class="bg-cardBg border border-slate-800 p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 font-mono font-bold">OS</div>
+          <h3 class="text-lg font-bold text-white mb-2">System Architecture</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Building custom Linux environments (SCode OS), offline utility frameworks, and secure developer computing environments.</p>
+        </div>
+
+        <div class="bg-cardBg border border-slate-800 p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 font-mono font-bold">WEB</div>
+          <h3 class="text-lg font-bold text-white mb-2">Full-Stack & EdTech</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Architecting high-performance educational portals, digital archives, and responsive web systems with modern UI/UX principles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & MESSAGING SECTION -->
+    <section id="contact" class="py-16">
+      <div class="bg-cardBg border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div>
+            <span class="text-blue-400 font-mono text-xs uppercase tracking-widest block mb-2">Get In Touch</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Let's build something extraordinary.</h2>
+            <p class="text-slate-400 text-sm leading-relaxed mb-8">
+              Whether you want to discuss AI integration, operating systems development, or commission a digital platform, feel free to drop a message.
+            </p>
+
+            <div class="space-y-4 text-sm font-mono text-slate-300">
+              <div class="flex items-center gap-3">
+                <span class="text-blue-400">📧</span>
+                <span>atubraabraham@gmail.com</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-emerald-400">💬</span>
+                <span>+233 55 557 8864 (WhatsApp)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-purple-400">📍</span>
+                <span>Ghana</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div>
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1.5">YOUR NAME</label>
+                <input type="text" id="msgName" required placeholder="Enter your full name" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1.5">YOUR EMAIL</label>
+                <input type="email" id="msgEmail" required placeholder="name@example.com" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1.5">MESSAGE</label>
+                <textarea id="msgContent" required placeholder="Tell me about your project or inquiry..." rows="4" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2">
+                <span>Send via WhatsApp</span>
+                <span>↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 py-10 mt-12 bg-darkBg text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© 2026 <a href="https://scodegit.github.io/" class="text-slate-400 hover:text-blue-400 transition font-medium">SCode</a> — Built by SCode Groups</p>
+      <div class="flex items-center space-x-6">
+        <a href="https://github.com/SCodeGit" target="_blank" class="hover:text-slate-300 transition">GitHub</a>
+        <a href="https://scodegit.github.io/SCodeAI-Models/" target="_blank" class="hover:text-slate-300 transition">Hugging Face Hub</a>
+        <a href="https://wa.me/233555578864" target="_blank" class="hover:text-slate-300 transition">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Real-time project search and keyword filter
+    function filterProjects() {
+      const query = document.getElementById('projectSearch').value.toLowerCase();
+      const grid = document.getElementById('projectGrid');
+      const cards = grid.getElementsByClassName('card-item');
+      const noResults = document.getElementById('noResults');
+      let visibleCount = 0;
+
+      for (let i = 0; i < cards.length; i++) {
+        const title = cards[i].querySelector('h3').innerText.toLowerCase();
+        const desc = cards[i].querySelector('p').innerText.toLowerCase();
+        const keywords = cards[i].getAttribute('data-keywords') || '';
+
+        if (title.includes(query) || desc.includes(query) || keywords.includes(query)) {
+          cards[i].style.display = 'flex';
+          visibleCount++;
+        } else {
+          cards[i].style.display = 'none';
+        }
+      }
+
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Smart form submit redirect to WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('msgName').value;
+      const email = document.getElementById('msgEmail').value;
+      const content = document.getElementById('msgContent').value;
+      
+      const whatsappUrl = `https://wa.me/233555578864?text=${encodeURIComponent(`Hello SCode, my name is ${name} (${email}). Message: ${content}`)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+SCode GitHub Stats setup
+
+1. Put index.html in the root of your scode.git.io repository.
+2. Create this folder:
+   .github/workflows/
+3. Put github-stats.yml inside it.
+4. Push both files.
+5. GitHub Actions will run automatically every day at 05:17 UTC and create/update:
+   data/github-stats.json
+6. The portfolio reads that JSON directly. No github-readme-stats, streak-stats,
+   or activity-graph image service is required.
+
+Important:
+- The contribution count/calendar comes from GitHub's GraphQL contributionsCollection.
+- Public repository/follower/star data comes from GitHub's GraphQL API.
+- The workflow uses the built-in GITHUB_TOKEN; no personal access token is placed
+  in your HTML.
+- If you want private contributions included, GitHub visibility/permissions need
+  to be configured appropriately.
+- The total star count is summed from the first 100 public repositories returned.
+  This is sufficient for the current account unless the account grows beyond 100
+  owned public repositories.
+
+After pushing, manually run:
+GitHub repo -> Actions -> Update GitHub portfolio stats -> Run workflow
+
+Then open the portfolio and hard-refresh the page.

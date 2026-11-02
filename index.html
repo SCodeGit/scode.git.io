@@ -267,12 +267,12 @@
       </div>
 
       <div id="githubStatsStatus" class="font-mono" style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-        Fetching live GitHub profile details…
+        Fetching live GitHub numerical metrics…
       </div>
 
       <div class="grid-5">
         <div class="card" style="padding: 1.25rem; text-align: center;">
-          <div id="ghContributions" style="font-size: 1.75rem; font-weight: 800;">—</div>
+          <div id="ghContributions" style="font-size: 1.75rem; font-weight: 800; color: #60a5fa;">—</div>
           <div class="font-mono" style="font-size: 0.6875rem; color: var(--text-muted); margin-top: 0.25rem;">CONTRIBUTIONS</div>
         </div>
         <div class="card" style="padding: 1.25rem; text-align: center;">
@@ -289,7 +289,7 @@
         </div>
         <div class="card" style="padding: 1.25rem; text-align: center;">
           <div id="ghStreak" style="font-size: 1.75rem; font-weight: 800;">—</div>
-          <div class="font-mono" style="font-size: 0.6875rem; color: var(--text-muted); margin-top: 0.25rem;">ACCOUNT AGE</div>
+          <div class="font-mono" style="font-size: 0.6875rem; color: var(--text-muted); margin-top: 0.25rem;">EXPERIENCE</div>
         </div>
       </div>
 
@@ -507,99 +507,4 @@
         const keywords = (card.dataset.keywords || '').toLowerCase();
         const text = card.textContent.toLowerCase();
         const visible = !query || keywords.includes(query) || text.includes(query);
-        card.classList.toggle('hidden', !visible);
-        if (visible) visibleCount++;
-      });
-
-      noResults.classList.toggle('hidden', visibleCount !== 0);
-    }
-
-    // Number Formatting Helper
-    const nf = new Intl.NumberFormat('en-US');
-    function setText(id, val) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = val;
-    }
-
-    // Live GitHub API Loader with Dynamic Fallback
-    async function fetchGitHubData() {
-      const username = 'SCodeGit';
-      const statusEl = document.getElementById('githubStatsStatus');
-
-      try {
-        // Try direct GitHub API
-        const userRes = await fetch(`https://api.github.com/users/${username}`);
-        if (!userRes.ok) throw new Error('API request failed');
-
-        const userData = await userRes.json();
-        
-        setText('ghRepos', nf.format(userData.public_repos || 0));
-        setText('ghFollowers', nf.format(userData.followers || 0));
-        
-        // Compute account age in years
-        const createdYear = new Date(userData.created_at).getFullYear();
-        const currentYear = new Date().getFullYear();
-        setText('ghStreak', `${currentYear - createdYear}+ yrs`);
-
-        // Fetch Repos to sum stars
-        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-        if (reposRes.ok) {
-          const reposData = await reposRes.json();
-          const stars = reposData.reduce((acc, r) => acc + (r.stargazers_count || 0), 0);
-          setText('ghStars', nf.format(stars));
-        }
-
-        setText('ghContributions', 'Active');
-
-        if (statusEl) {
-          statusEl.textContent = 'Live data synced from GitHub API';
-          statusEl.style.color = '#34d399';
-        }
-
-        renderDummyCalendar();
-      } catch (err) {
-        console.warn('GitHub API fallback active:', err);
-        setText('ghRepos', '15+');
-        setText('ghFollowers', '10+');
-        setText('ghStars', '5+');
-        setText('ghContributions', '500+');
-        setText('ghStreak', '3+ yrs');
-        
-        if (statusEl) {
-          statusEl.textContent = 'Offline snapshot active';
-        }
-        renderDummyCalendar();
-      }
-    }
-
-    // Render Clean Visual Contribution Grid
-    function renderDummyCalendar() {
-      const container = document.getElementById('githubCalendar');
-      if (!container) return;
-
-      const grid = document.createElement('div');
-      grid.className = 'gh-calendar';
-
-      for (let i = 0; i < 53; i++) {
-        const week = document.createElement('div');
-        week.className = 'gh-week';
-        for (let j = 0; j < 7; j++) {
-          const cell = document.createElement('span');
-          const lvl = Math.floor(Math.random() * 4);
-          cell.className = `gh-cell gh-level-${lvl}`;
-          week.appendChild(cell);
-        }
-        grid.appendChild(week);
-      }
-
-      container.replaceChildren(grid);
-    }
-
-    // Set Current Footer Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Initial Load
-    fetchGitHubData();
-  </script>
-</body>
-</html>
+        card.classList.toggle('hidden', !
